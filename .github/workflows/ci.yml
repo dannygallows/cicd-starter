@@ -22,7 +22,9 @@ jobs:
         run: go test -cover ./...
 
       - name: Run gosec security scanner
-        run: securego/gosec@master
+        uses: securego/gosec@master
+        with:
+          args: ./...
   style:
     name: Style
     runs-on: ubuntu-latest
